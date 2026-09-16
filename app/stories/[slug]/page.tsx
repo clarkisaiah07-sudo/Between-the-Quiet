@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getAllStories, getStoryBySlug } from "@/lib/stories";
 import ReadingPlayer from "@/components/ReadingPlayer";
+import { StoryBody } from "@/components/StoryBody";
 
 export function generateStaticParams() {
   return getAllStories().map((s) => ({ slug: s.slug }));
@@ -51,10 +52,8 @@ export default function StoryPage({ params }: { params: { slug: string } }) {
         />
 
         {hasText ? (
-          <div className="prose prose-invert mt-10 max-w-none font-serif text-lg leading-[1.85] text-ivory-100 prose-p:mb-6">
-            {/* Story body renders here once the manuscript is added to
-                content/stories/{story.slug}.mdx */}
-            {story.content}
+          <div className="prose prose-invert mt-10 max-w-none font-serif text-lg leading-[1.85] text-ivory-100">
+            <StoryBody content={story.content} />
           </div>
         ) : (
           <p className="mt-16 italic text-ivory-500">
