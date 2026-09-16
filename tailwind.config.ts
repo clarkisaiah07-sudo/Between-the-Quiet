@@ -10,18 +10,18 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          950: "#0b0a09", // warm near-black base (not pure black)
-          900: "#0d0c0a",
-          850: "#121110",
+          950: "#08090a", // near-black base
+          900: "#0d0f10",
+          850: "#111315",
         },
         ivory: {
-          100: "#f2ede2", // warm ivory type
-          300: "#d9d0bf",
-          500: "#a89d8a",
+          100: "#e4ddd3", // warm ivory main text
+          300: "#beb4aa", // secondary italic
+          500: "#8f8880", // dim text
         },
         rust: {
-          500: "#7c4a3c", // muted, aged dried-red accent
-          600: "#68392e",
+          500: "#8c3e36", // restrained, aged red accent
+          600: "#733329",
         },
       },
       fontFamily: {

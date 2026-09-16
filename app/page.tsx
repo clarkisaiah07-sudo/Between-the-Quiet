@@ -12,9 +12,9 @@ export default function HomePage() {
       <section
         className="relative overflow-hidden border-b border-white/10"
         style={{
-          backgroundColor: "#0b0a09",
-          backgroundImage: `radial-gradient(100% 130% at 78% -15%, ${featured.theme.base} 0%, #0b0a09 68%)`,
-          filter: "saturate(0.78) brightness(0.92)",
+          backgroundColor: "#08090a",
+          backgroundImage: `radial-gradient(75% 90% at 82% 55%, ${featured.theme.base} 0%, #08090a 62%)`,
+          filter: "saturate(0.7) brightness(0.85)",
         }}
       >
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 sm:px-10 sm:py-28 lg:grid-cols-[1.3fr_1px_1fr]">

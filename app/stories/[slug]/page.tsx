@@ -27,9 +27,9 @@ export default function StoryPage({ params }: { params: { slug: string } }) {
     <article
       className="relative min-h-screen"
       style={{
-        backgroundColor: "#0b0a09",
-        backgroundImage: `radial-gradient(150% 110% at 50% -5%, ${story.theme.base}48 0%, #0b0a09 60%)`,
-        filter: "saturate(0.8) brightness(0.94)",
+        backgroundColor: "#08090a",
+        backgroundImage: `radial-gradient(160% 120% at 50% -5%, ${story.theme.base}40 0%, #08090a 55%)`,
+        filter: "saturate(0.8) brightness(0.92)",
       }}
     >
       <div className="mx-auto max-w-2xl px-6 pb-32 pt-16 sm:px-8">
