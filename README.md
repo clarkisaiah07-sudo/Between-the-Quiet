@@ -65,3 +65,5 @@ npm run dev
   page finishes mounting. Volume is persisted to `localStorage`.
 - Code is organized so a private `/admin` publishing UI could be added
   later without restructuring the content layer.
+
+_Last updated: 2026-09-16_
