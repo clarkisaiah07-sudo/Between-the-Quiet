@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bg" gradientUnits="userSpaceOnUse" cx="195" cy="154" r="435">
+      <stop offset="0%" stop-color="#1a3a4a"/>
+      <stop offset="55%" stop-color="#0d1a20"/>
+      <stop offset="100%" stop-color="#08090a"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+
+  <!-- extremely subtle border, matching the site's antique hairline -->
+  <rect x="4" y="4" width="504" height="504" rx="108" fill="none" stroke="#c6b296" stroke-opacity="0.14" stroke-width="3"/>
+
+  <!-- crescent moon: full ivory circle with a second circle, filled the same
+       as the background, painted on top to bite out the crescent shape -->
+  <circle cx="256" cy="256" r="108" fill="#e4ddd3"/>
+  <circle cx="304" cy="222" r="92" fill="url(#bg)"/>
+</svg>

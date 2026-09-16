@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, EB_Garamond } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
@@ -27,6 +27,20 @@ export const metadata: Metadata = {
     template: "%s · Between the Quiet",
   },
   description: "Stories for the places darkness lingers.",
+  manifest: "/manifest.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+  appleWebApp: {
+    capable: true,
+    title: "Between the Quiet",
+    statusBarStyle: "black-translucent",
+  },
   openGraph: {
     title: "Between the Quiet",
     description: "Stories for the places darkness lingers.",
@@ -38,6 +52,10 @@ export const metadata: Metadata = {
     title: "Between the Quiet",
     description: "Stories for the places darkness lingers.",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#08090a",
 };
 
 export default function RootLayout({
