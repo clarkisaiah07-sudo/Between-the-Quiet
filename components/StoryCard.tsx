@@ -27,14 +27,30 @@ export default function StoryCard({ story }: { story: StoryMeta }) {
       onClick={handleClick}
       className="group relative flex min-h-[280px] flex-col justify-end overflow-hidden border border-white/10 p-6 transition-colors duration-500 hover:border-white/20"
       style={{
-        backgroundImage: `radial-gradient(120% 140% at 20% 0%, ${base} 0%, ${deep} 75%)`,
+        backgroundColor: "#0a0a0a",
+        backgroundImage: `radial-gradient(160% 130% at 22% -15%, ${base} 0%, ${deep} 40%, #0a0a0a 85%)`,
       }}
     >
+      {/* Fine grain, layered so the color field reads as a worn/painted
+          sheet rather than a flat digital gradient. */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-40 mix-blend-overlay"
+        className="pointer-events-none absolute inset-0 opacity-[0.16] mix-blend-soft-light"
         style={{
           backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.07] mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)'/%3E%3C/svg%3E\")",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          boxShadow: "inset 0 0 90px 20px rgba(0,0,0,0.55)",
         }}
       />
 
