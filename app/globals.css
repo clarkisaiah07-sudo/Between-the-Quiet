@@ -27,22 +27,90 @@ html {
 body {
   font-family: var(--font-literary), Georgia, serif;
   position: relative;
+  /* Large, irregular, low-contrast color casts — never a clean two-stop
+     gradient. Several oversized, softly-feathered ellipses in different
+     hues (blue-black, umber, forest, burgundy, charcoal) overlapping so
+     the page reads as uneven ambient light/fog rather than a flat color
+     or a single deliberate gradient. Visible mainly in the plain page
+     background (margins, gaps, text-only pages); the overlay layers below
+     also drag every section — including the colored story cards — into
+     the same atmosphere. */
+  background-image:
+    radial-gradient(60% 50% at 8% 6%, rgba(24, 38, 48, 0.55) 0%, transparent 65%),
+    radial-gradient(70% 55% at 92% 14%, rgba(46, 32, 20, 0.45) 0%, transparent 68%),
+    radial-gradient(55% 60% at 15% 88%, rgba(28, 36, 26, 0.4) 0%, transparent 66%),
+    radial-gradient(65% 50% at 85% 92%, rgba(42, 20, 22, 0.35) 0%, transparent 70%),
+    radial-gradient(90% 70% at 50% 45%, rgba(18, 17, 16, 0.6) 0%, transparent 75%);
+  background-attachment: fixed;
 }
 
-/* Extremely subtle film-grain texture, layered above the background color,
-   never above readable text content. */
-.grain {
+/* Vignette — fixed to the viewport (not the page), so corners and edges
+   stay darker as the cinematic "frame" regardless of scroll position.
+   Sits above every section, including story cards, which is what ties
+   their color into the same darkness instead of reading as separate
+   rectangles. */
+body::before {
+  content: "";
   pointer-events: none;
   position: fixed;
   inset: 0;
-  z-index: 0;
-  opacity: var(--grain-opacity);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  z-index: 40;
+  background:
+    radial-gradient(120% 120% at 50% 45%, transparent 35%, rgba(4, 4, 4, 0.55) 100%);
+}
+
+/* Fine film grain, layered over the entire composited page (header, hero,
+   cards, footer alike) so it behaves like grain on a frame of film rather
+   than a texture confined to one element. Kept faint and blended with
+   overlay so text stays fully legible. */
+body::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 41;
+  opacity: 0.05;
   mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 640px) {
+  body {
+    background-attachment: scroll;
+  }
 }
 
 .hairline {
   border-color: rgba(242, 237, 226, 0.14);
+}
+
+/* Warm/antique border and hairline treatment, overriding the cool
+   white-based Tailwind utilities already used throughout the markup —
+   changes only the color, not any markup, spacing, or structure. */
+.border-white\/10 {
+  border-color: rgba(198, 178, 150, 0.14) !important;
+}
+.border-white\/20 {
+  border-color: rgba(198, 178, 150, 0.22) !important;
+}
+.border-white\/30 {
+  border-color: rgba(198, 178, 150, 0.3) !important;
+}
+.hover\:border-white\/20:hover {
+  border-color: rgba(198, 178, 150, 0.22) !important;
+}
+.hover\:border-white\/40:hover {
+  border-color: rgba(198, 178, 150, 0.34) !important;
+}
+.hover\:border-white\/60:hover {
+  border-color: rgba(198, 178, 150, 0.46) !important;
+}
+.bg-white\/10 {
+  background-color: rgba(198, 178, 150, 0.08) !important;
+}
+.border-t.border-white\/10,
+.border-b.border-white\/10 {
+  border-color: rgba(198, 178, 150, 0.12) !important;
 }
 
 .text-balance {

@@ -27,8 +27,9 @@ export default function StoryCard({ story }: { story: StoryMeta }) {
       onClick={handleClick}
       className="group relative flex min-h-[280px] flex-col justify-end overflow-hidden border border-white/10 p-6 transition-colors duration-500 hover:border-white/20"
       style={{
-        backgroundColor: "#0a0a0a",
-        backgroundImage: `radial-gradient(160% 130% at 22% -15%, ${base} 0%, ${deep} 40%, #0a0a0a 85%)`,
+        backgroundColor: "#0b0a09",
+        backgroundImage: `radial-gradient(170% 140% at 20% -20%, ${base} 0%, ${deep} 32%, #0b0a09 78%)`,
+        filter: "saturate(0.72) brightness(0.88) contrast(1.03)",
       }}
     >
       {/* Fine grain, layered so the color field reads as a worn/painted
